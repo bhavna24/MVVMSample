@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CUx-MS-fBU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MVVMSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qDP-A7-tCv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qDP-A7-tCv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CBU-Yj-h6P"/>
+                            <constraint firstItem="qDP-A7-tCv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UfK-K0-M4V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qDP-A7-tCv" secondAttribute="bottom" id="WZl-bT-BLV"/>
+                            <constraint firstAttribute="trailing" secondItem="qDP-A7-tCv" secondAttribute="trailing" id="ybN-6N-eXf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sht-EH-0XX"/>
+                    <connections>
+                        <outlet property="todoTableView" destination="qDP-A7-tCv" id="CWr-Op-RMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Add New To DoVC-->
+        <scene sceneID="7YJ-UL-GQv">
+            <objects>
+                <viewController storyboardIdentifier="AddNewToDoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JKR-UF-aIV" customClass="AddNewToDoVC" customModule="MVVMSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lkw-w9-aJT"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIb-gm-eym"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h15-lJ-p6h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GEN-SU-QRV">
+                                <rect key="frame" x="30" y="50" width="315" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="reP-zj-xNL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-qU-ztk">
+                                <rect key="frame" x="155.5" y="121" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="MiB-iy-O7s"/>
+                                    <constraint firstAttribute="height" constant="30" id="z0D-4Y-QpV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addBtnTapped:" destination="JKR-UF-aIV" eventType="touchUpInside" id="13F-Wv-Jhe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GEN-SU-QRV" secondAttribute="trailing" constant="30" id="4kv-Z0-AN2"/>
+                            <constraint firstItem="GEN-SU-QRV" firstAttribute="top" secondItem="lkw-w9-aJT" secondAttribute="bottom" constant="30" id="7P2-cH-35T"/>
+                            <constraint firstItem="Coo-qU-ztk" firstAttribute="top" secondItem="GEN-SU-QRV" secondAttribute="bottom" constant="35" id="D4v-Cw-xji"/>
+                            <constraint firstItem="GEN-SU-QRV" firstAttribute="leading" secondItem="h15-lJ-p6h" secondAttribute="leading" constant="30" id="qXc-9N-nFQ"/>
+                            <constraint firstItem="Coo-qU-ztk" firstAttribute="centerX" secondItem="h15-lJ-p6h" secondAttribute="centerX" id="rp0-LH-AqK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addBtn" destination="Coo-qU-ztk" id="Ygv-64-Ymg"/>
+                        <outlet property="textField" destination="GEN-SU-QRV" id="2ES-mi-ftz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rr3-Nr-dYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704.8" y="620.23988005997012"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bvZ-Ls-TDy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CUx-MS-fBU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eva-vj-kLu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="03e-eA-0XH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSw-fP-VGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
