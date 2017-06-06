@@ -22,6 +22,10 @@ class ToDoItemViewModel: CellRepresentable {
     var item: ToDoItem
     var estimatedRowHeight: CGFloat = 60
 
+    var itemNameValue: String? {
+        return item.itemName
+    }
+
     init(item: ToDoItem) {
         self.item = item
     }
